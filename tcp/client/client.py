@@ -5,6 +5,8 @@ def tcp_client() -> None:
     host: str = 'localhost'
     port: int = 20000
 
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
         server.connect((host, port))
 
